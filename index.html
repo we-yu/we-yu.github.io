@@ -69,6 +69,101 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pythonによる紳士達の性癖分析：データフレーム編-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編-1/" class="article-date">
+  <time datetime="2019-03-25T15:43:34.000Z" itemprop="datePublished">2019-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編-1/">pythonによる紳士達の性癖分析：データフレーム編</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://we-yu.github.io/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編-1/" data-id="cjtoj1kmw000g4ei5rqwqbz3s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-pythonによる紳士達の性癖分析：データフレーム編" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編/" class="article-date">
+  <time datetime="2019-03-25T15:09:32.000Z" itemprop="datePublished">2019-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編/">pythonによる紳士達の性癖分析：データフレーム編</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Analyzing-Gentlemen’s-fetishism-by-Web-scraping-from-Doujin-game-site-3rd"><a href="#Analyzing-Gentlemen’s-fetishism-by-Web-scraping-from-Doujin-game-site-3rd" class="headerlink" title="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 3rd"></a>Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 3rd</h2><h3 id="Try-to-create-Matrix-by-DataFrame-On-previous-article-I-crated-by-2-dimension-array"><a href="#Try-to-create-Matrix-by-DataFrame-On-previous-article-I-crated-by-2-dimension-array" class="headerlink" title="Try to create Matrix by DataFrame. On previous article, I crated by 2-dimension-array."></a>Try to create Matrix by DataFrame. On <a href="https://we-yu.github.io/2019/03/24/python%E3%81%AB%E3%82%88%E3%82%8B%E7%B4%B3%E5%A3%AB%E9%81%94%E3%81%AE%E6%80%A7%E7%99%96%E5%88%86%E6%9E%90%EF%BC%9A%E3%83%87%E3%83%BC%E3%82%BF%E5%88%86%E6%9E%90%E7%B7%A8/">previous</a> article, I crated by 2-dimension-array.</h3><h4 id="Migrate-from-Array-to-DataFrame"><a href="#Migrate-from-Array-to-DataFrame" class="headerlink" title="Migrate from Array to DataFrame."></a>Migrate from Array to DataFrame.</h4><ul>
+<li>Matrix that created last article, That constructed by 2-D-Array.<ul>
+<li>This is not bad… But Now I use Python. Try to migrate to <strong>DataFrame.</strong></li>
+</ul>
+</li>
+<li>After created 2-D-Matrix, Keep data and create DataFrame.</li>
+</ul>
+<h4 id="Add-code-to-previous-source"><a href="#Add-code-to-previous-source" class="headerlink" title="Add code to previous source."></a>Add code to previous source.</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># :</span></span><br><span class="line"><span class="comment"># (前略)</span></span><br><span class="line"><span class="comment"># :</span></span><br><span class="line"><span class="comment"># 頻出の組み合わせを出力</span></span><br><span class="line"><span class="keyword">for</span> rq <span class="keyword">in</span> ranq :</span><br><span class="line">    print(rq[<span class="string">"val"</span>], rq[<span class="string">"x"</span>], rq[<span class="string">"y"</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配列→DataFrame化</span></span><br><span class="line">list_df = pd.DataFrame( columns=tags )</span><br><span class="line"></span><br><span class="line"><span class="comment"># enumerateでiを進めながらxを使用できる。</span></span><br><span class="line"><span class="keyword">for</span> i, x <span class="keyword">in</span> enumerate(tags):</span><br><span class="line">    <span class="comment"># TagMatrixから一行作り、DataFrameに追加することを繰り返す。</span></span><br><span class="line">    tmp_se = pd.Series( tagMatrix[x], index=list_df.columns, name=tags[i] )</span><br><span class="line">    list_df = list_df.append( tmp_se )</span><br><span class="line">print( list_df.head() )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 行（横軸）の抽出</span></span><br><span class="line">print(list_df.iloc[<span class="number">3</span>:<span class="number">6</span>, :])</span><br><span class="line"><span class="comment"># 列（縦軸）の抽出</span></span><br><span class="line">print(list_df.iloc[:, <span class="number">3</span>:<span class="number">6</span>].head())</span><br><span class="line"><span class="comment"># タグを指定しての列の抽出</span></span><br><span class="line">tgtLine = [<span class="string">'陵辱'</span>, <span class="string">'逆転無し'</span>]</span><br><span class="line">print(list_df[tgtLine].head())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 縦軸で平均算出</span></span><br><span class="line">print(list_df.mean(axis = <span class="number">0</span>))</span><br><span class="line"><span class="comment"># 横軸で合計値算出</span></span><br><span class="line">print(list_df.sum(axis = <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 平均</span></span><br><span class="line">list_df.to_csv(<span class="string">"FromDM.csv"</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Might be basic process is <code>Get 1 line from 2-D-Array -&gt; 1 line append for DataFrame</code>.</li>
+<li>This time matrix isn’t Mathematical Matrix. No need that function. But it able to calculate <code>Average, Sum, others</code>. I should note it.<ul>
+<li>This is useful to export into CSV as easily.</li>
+<li>Can I make it as Upper triangular matrix by 1 command?</li>
+</ul>
+</li>
+<li>To check result, Take diff between <code>CSV exported from 2-D-array</code> and <code>CSV exported by DataFrame</code>.</li>
+</ul>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/6a47c1bd-0522-6e0b-7a21-b89c4ff146d6.png" alt="image"></p>
+<ul>
+<li>There’s diff on header (Null <-> ‘-‘). But remain data confirmed to matched.</-></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://we-yu.github.io/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編/" data-id="cjtoj1kms00084ei5axesuiy8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-DataFrame/">Python DataFrame</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pythonによる紳士達の性癖分析：Webスクレイピング編" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/" class="article-date">
@@ -129,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/" data-id="cjtohfo5w000bxvi572qi374a" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/" data-id="cjtoj1kmv000d4ei5o4of0koh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Web-scraping/">Python Web-scraping</a></li></ul>
@@ -516,7 +611,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/" data-id="cjtohfo6d000nxvi5kwvgsded" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/" data-id="cjtoj1kne000r4ei53af3yqyn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Doujin-game/">Python Doujin-game</a></li></ul>
@@ -561,7 +656,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/24/sympyによる導関数の算出・描画/" data-id="cjtohfo5u0009xvi5w4ymjz2a" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/24/sympyによる導関数の算出・描画/" data-id="cjtoj1kmt00094ei5mv1j6kl1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-simpy-Python2-7/">Python simpy Python2.7</a></li></ul>
@@ -654,7 +749,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-ニューラルネットワークまとめ/" data-id="cjtohfo69000kxvi5mk7zff59" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-ニューラルネットワークまとめ/" data-id="cjtoj1knd000p4ei5evzhkgtr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Udemy-Python-MachineLearning/">Udemy Python MachineLearning</a></li></ul>
@@ -769,7 +864,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-数学系処理／ニューロン編/" data-id="cjtohfo6a000lxvi57x294yl2" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-数学系処理／ニューロン編/" data-id="cjtoj1knc000o4ei51ak795m6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Udemy-Python-MachineLearning/">Udemy Python MachineLearning</a></li></ul>
@@ -883,7 +978,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/21/FGO-For-FGO-Apple-Purchasing-quartz-from-outside-of-Japan/" data-id="cjtohfo5i0000xvi5ajndarte" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/21/FGO-For-FGO-Apple-Purchasing-quartz-from-outside-of-Japan/" data-id="cjtoj1km900004ei5jic9c6e5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/">Apple FGO 課金 ソシャゲ purchase Game</a></li></ul>
@@ -984,7 +1079,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/21/Udemy-Learning-Unity-3D迷路ゲーム開発入門/" data-id="cjtohfo5r0004xvi5hmsz5ofk" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/21/Udemy-Learning-Unity-3D迷路ゲーム開発入門/" data-id="cjtoj1kmq00054ei54qk5vim8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity-Udemy/">Unity Udemy</a></li></ul>
@@ -1063,135 +1158,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/20/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-Python基礎編/" data-id="cjtohfo5s0005xvi5j4oqi47t" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/20/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-Python基礎編/" data-id="cjtoj1kmr00074ei5hojhapki" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Python2-7-Udemy/">Python Python2.7 Udemy</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Review4RecentlyUdemyClasses" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/20/Review4RecentlyUdemyClasses/" class="article-date">
-  <time datetime="2019-03-19T17:48:45.000Z" itemprop="datePublished">2019-03-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/20/Review4RecentlyUdemyClasses/">Review4RecentlyUdemyClasses</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Review-for-recently-Udemy-classes"><a href="#Review-for-recently-Udemy-classes" class="headerlink" title="Review for recently Udemy classes"></a>Review for recently Udemy classes</h2><ol>
-<li><p><a href="https://www.udemy.com/unity3d-maze/" target="_blank" rel="noopener">Unity 3D迷路ゲーム開発入門</a></p>
-<ul>
-<li>Create 3D-packman-like game.</li>
-<li>Using object is primitive one, or combined that. Materials, Shaders, Uses only for change color.</li>
-<li>Control enemy-unit moving by simple AI. Let them trace player-unit.</li>
-<li>Edit many of src files. Implemented by C#, Use Lambda many times.<ul>
-<li>Use a lot of src files, and their class and functions connected as complicated. It may hard for first time programmer.</li>
-<li>You have to use Pass by Reference, Pass by value and Inheritance. You’d better understand this informations before start.</li>
-</ul>
-</li>
-<li>There’s start &amp; goal in game, But no have “scene change”.</li>
-<li>Use UI as Buttons. This is Unity basic functions.</li>
-<li><strong>Some programming knowledge, thinking is required. But if you have that already, good course for study</strong>.</li>
-</ul>
-</li>
-</ol>
-<ol start="2">
-<li><p><a href="https://www.udemy.com/unity-3d-game-design/" target="_blank" rel="noopener">【初心者でも簡単】はじめてのUnity 3D ゲームデザイン</a></p>
-<ul>
-<li><strong>Require Macintosh for student. If you want to install application for publish and setting in Windows, You have to replace of information skill in your mind.</strong><ul>
-<li>Might be point isn’t Mac, <strong>Important is Command line</strong>. Maybe you can do same way on Linux.</li>
-<li>Maybe this is my fault, Use on Cygwin, That was failed.</li>
-</ul>
-</li>
-<li>Main game is very simple. Attach some lights and downloaded materials for object. Then wondering in that world.<ul>
-<li><strong>Never coding</strong>. Basically uses StandardAssets and downloaded materials. Just build only “Stage for roaming”.</li>
-</ul>
-</li>
-<li>This class is for beginner. On this time, Beginner means <strong>Never coding before</strong>.</li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li><p><a href="https://www.udemy.com/create-a-simple-3d-unity-game-in-2-hours-from-scratch/" target="_blank" rel="noopener">Create a simple 3D Unity Game from Scratch</a></p>
-<ul>
-<li><strong>English only</strong>. No subtitles. But follow their title and action, You may understand what you have to do roughly.</li>
-<li>On 3D stage, Play with bounding ball and get scores.</li>
-<li>Save last score and high-score.</li>
-<li>Nothing game clear, But implement Page transition from start to goal and time of gameover.</li>
-<li>If Compare #1, Code is very simple. But need to use physical simulation. (Rigidbody, AddForce)</li>
-<li>Use text and button in Unity UI.</li>
-<li>Do build, And create execution file.</li>
-<li>Nothing special features. It make as title, “Create sipmle game from scratch”.<ul>
-<li>If you try to do from simple game, I can recommend for you.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/20/Review4RecentlyUdemyClasses/" data-id="cjtohfo5q0003xvi5cqisg073" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity-Udemy/">Unity Udemy</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Post" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/19/Post/" class="article-date">
-  <time datetime="2019-03-19T16:27:35.000Z" itemprop="datePublished">2019-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/19/Post/">Post</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/19/Post/" data-id="cjtohfo5m0001xvi5bd6o2sc3" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -1217,7 +1188,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/">Apple FGO 課金 ソシャゲ purchase Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Doujin-game/">Python Doujin-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Python2-7-Udemy/">Python Python2.7 Udemy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Web-scraping/">Python Web-scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-simpy-Python2-7/">Python simpy Python2.7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Udemy-Python-MachineLearning/">Udemy Python MachineLearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity-Udemy/">Unity Udemy</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/">Apple FGO 課金 ソシャゲ purchase Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-DataFrame/">Python DataFrame</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Doujin-game/">Python Doujin-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Python2-7-Udemy/">Python Python2.7 Udemy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Web-scraping/">Python Web-scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-simpy-Python2-7/">Python simpy Python2.7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Udemy-Python-MachineLearning/">Udemy Python MachineLearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity-Udemy/">Unity Udemy</a></li></ul>
     </div>
   </div>
 
@@ -1227,7 +1198,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/" style="font-size: 10px;">Apple FGO 課金 ソシャゲ purchase Game</a> <a href="/tags/Python-Doujin-game/" style="font-size: 10px;">Python Doujin-game</a> <a href="/tags/Python-Python2-7-Udemy/" style="font-size: 10px;">Python Python2.7 Udemy</a> <a href="/tags/Python-Web-scraping/" style="font-size: 10px;">Python Web-scraping</a> <a href="/tags/Python-simpy-Python2-7/" style="font-size: 10px;">Python simpy Python2.7</a> <a href="/tags/Udemy-Python-MachineLearning/" style="font-size: 20px;">Udemy Python MachineLearning</a> <a href="/tags/Unity-Udemy/" style="font-size: 20px;">Unity Udemy</a>
+      <a href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/" style="font-size: 10px;">Apple FGO 課金 ソシャゲ purchase Game</a> <a href="/tags/Python-DataFrame/" style="font-size: 10px;">Python DataFrame</a> <a href="/tags/Python-Doujin-game/" style="font-size: 10px;">Python Doujin-game</a> <a href="/tags/Python-Python2-7-Udemy/" style="font-size: 10px;">Python Python2.7 Udemy</a> <a href="/tags/Python-Web-scraping/" style="font-size: 10px;">Python Web-scraping</a> <a href="/tags/Python-simpy-Python2-7/" style="font-size: 10px;">Python simpy Python2.7</a> <a href="/tags/Udemy-Python-MachineLearning/" style="font-size: 20px;">Udemy Python MachineLearning</a> <a href="/tags/Unity-Udemy/" style="font-size: 20px;">Unity Udemy</a>
     </div>
   </div>
 
@@ -1249,6 +1220,14 @@
       <ul>
         
           <li>
+            <a href="/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編-1/">pythonによる紳士達の性癖分析：データフレーム編</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/25/pythonによる紳士達の性癖分析：データフレーム編/">pythonによる紳士達の性癖分析：データフレーム編</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/">pythonによる紳士達の性癖分析：Webスクレイピング編</a>
           </li>
         
@@ -1258,14 +1237,6 @@
         
           <li>
             <a href="/2019/03/24/sympyによる導関数の算出・描画/">sympyによる導関数の算出・描画</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-ニューラルネットワークまとめ/">Udemy - ゼロからPythonで学ぶ人工知能と機械学習 : ニューラルネットワークまとめ</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-数学系処理／ニューロン編/">Udemy - ゼロからPythonで学ぶ人工知能と機械学習 : 数学系処理／ニューロン編</a>
           </li>
         
       </ul>
