@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>pythonによる紳士達の性癖分析：データ分析編 | Kohaku-san Kawaii</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 2stThis time analyze 2 CSV files that created on previous article.Analyze scraping result. Targets are 2 files that created on l">
+<meta name="keywords" content="Python Doujin-game">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pythonによる紳士達の性癖分析：データ分析編">
+<meta property="og:url" content="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/index.html">
+<meta property="og:site_name" content="Kohaku-san Kawaii">
+<meta property="og:description" content="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 2stThis time analyze 2 CSV files that created on previous article.Analyze scraping result. Targets are 2 files that created on l">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/0b9b469c-9acf-a681-3341-5252dddd7223.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/1b89c708-d094-3e0e-0498-c0d7c001257b.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/520b8106-a30d-6f60-b049-e1446861fa2e.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/6d2897db-b14c-e075-9145-4c8e539a7f5d.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/1a1e4c9a-e1fc-4e14-bb51-6084bcb812bc.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/0d9acec3-0e39-533e-c1a3-9f97f274622e.png">
+<meta property="og:image" content="http://tn.smilevideo.jp/smile?i=21780747.L">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/9ad9b4f3-8005-c8b7-be98-b4d8f26c3de4.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/6079a581-961b-2f69-6c22-79c27566eaa7.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/81248dff-c9f7-188c-373a-00c3134fb4c7.png">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/d90cf96a-0f9c-c5a4-593c-b3d813c1caa9.png">
+<meta property="og:updated_time" content="2019-03-25T15:04:27.619Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pythonによる紳士達の性癖分析：データ分析編">
+<meta name="twitter:description" content="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 2stThis time analyze 2 CSV files that created on previous article.Analyze scraping result. Targets are 2 files that created on l">
+<meta name="twitter:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/0b9b469c-9acf-a681-3341-5252dddd7223.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Kohaku-san Kawaii" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kohaku-san Kawaii</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">we-yu&#39;s note</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://we-yu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pythonによる紳士達の性癖分析：データ分析編" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/" class="article-date">
+  <time datetime="2019-03-24T16:12:01.000Z" itemprop="datePublished">2019-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pythonによる紳士達の性癖分析：データ分析編
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Analyzing-Gentlemen’s-fetishism-by-Web-scraping-from-Doujin-game-site-2st"><a href="#Analyzing-Gentlemen’s-fetishism-by-Web-scraping-from-Doujin-game-site-2st" class="headerlink" title="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 2st"></a>Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 2st</h2><h3 id="This-time-analyze-2-CSV-files-that-created-on-previous-article"><a href="#This-time-analyze-2-CSV-files-that-created-on-previous-article" class="headerlink" title="This time analyze 2 CSV files that created on previous article."></a>This time analyze 2 CSV files that created on <a href="http://ww" target="_blank" rel="noopener">previous</a> article.</h3><h4 id="Analyze-scraping-result"><a href="#Analyze-scraping-result" class="headerlink" title="Analyze scraping result."></a>Analyze scraping result.</h4><ul>
+<li>Targets are 2 files that created on <a href="http://ww" target="_blank" rel="noopener">last time</a></li>
+<li>Maybe we can do many ways. But just this now, Check <strong>Strong relevant</strong> tags.<ul>
+<li>For example, “Wife” tag has low-relevant with “Loli”. But maybe strong-relevant with “Milf”.</li>
+</ul>
+</li>
+<li><strong>Still shows Unmannered keywords as this. Be careful.</strong></li>
+</ul>
+<h4 id="Flow-of-processing"><a href="#Flow-of-processing" class="headerlink" title="Flow of processing"></a>Flow of processing</h4><ul>
+<li>First, Prepare 2-dimensional-array (table) as this.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">ポニーテール</th>
+<th style="text-align:center">輪姦</th>
+<th style="text-align:center">スーツ</th>
+<th style="text-align:center">メガネ</th>
+<th style="text-align:center">盗撮</th>
+<th style="text-align:center">陵辱</th>
+<th style="text-align:center">…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ポニーテール</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">輪姦</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">スーツ</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">メガネ</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">盗撮</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">陵辱</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Same values in records, columns. Finally this is Square &amp; Zero matrix.</li>
+<li>We already created “tags count” CSV on last time.</li>
+<li>Read “Title, Tags” CSV. Correspond cell increment as +1.<ul>
+<li>For example, If read tags as <code>輪姦, 陵辱, ポニーテール</code>. (Maybe this product some ponytail girl will be suffer)</li>
+<li>After that, Above table changes as this.</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">ポニーテール</th>
+<th style="text-align:center">輪姦</th>
+<th style="text-align:center">スーツ</th>
+<th style="text-align:center">メガネ</th>
+<th style="text-align:center">盗撮</th>
+<th style="text-align:center">陵辱</th>
+<th style="text-align:center">…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ポニーテール</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">輪姦</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">スーツ</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">メガネ</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">盗撮</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">陵辱</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Then next. Read tags as <code>スーツ, 輪姦, 陵辱</code>. (Might be suit lady got some terrible trouble)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">-</th>
+<th style="text-align:center">ポニーテール</th>
+<th style="text-align:center">輪姦</th>
+<th style="text-align:center">スーツ</th>
+<th style="text-align:center">メガネ</th>
+<th style="text-align:center">盗撮</th>
+<th style="text-align:center">陵辱</th>
+<th style="text-align:center">…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ポニーテール</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">輪姦</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">スーツ</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">メガネ</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">盗撮</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">陵辱</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">:</td>
+<td style="text-align:center">-</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Continue as this for all products in ranking. Analyze <strong>Which tags combination is most close?</strong></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: UTF-8</span></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="comment"># CSV読み込み・配列の添字・二次元辞書・キュー</span></span><br><span class="line"><span class="comment"># ランキング製品のタグの組み合わせの数をカウントする。</span></span><br><span class="line"></span><br><span class="line">RANKING_CSV_FILENAME = <span class="string">'RankingList.csv'</span></span><br><span class="line">DLTAGS_CSV_FILENAME = <span class="string">'TagList.csv'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 頻出すぎたり性癖に直結しない系統のタグはいったん外す。</span></span><br><span class="line">IGNORE_TAGS = (<span class="string">"バイノーラル"</span>, <span class="string">"中出し"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ランキング作品のタグ群を配列に読み込む。</span></span><br><span class="line">csv_file = open(RANKING_CSV_FILENAME, <span class="string">"r"</span>)</span><br><span class="line">f = csv.reader(csv_file, delimiter=<span class="string">","</span>, doublequote=<span class="literal">True</span>, lineterminator=<span class="string">"\r\n"</span>, quotechar=<span class="string">'"'</span>, skipinitialspace=<span class="literal">True</span>)</span><br><span class="line">header = next(f)</span><br><span class="line">productMatrix = []</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> f:</span><br><span class="line">    <span class="comment"># 左端はタイトルなので今回は不要。読み飛ばすため[1:]で指定。</span></span><br><span class="line">    t = row[<span class="number">1</span>:]</span><br><span class="line">    <span class="comment"># タグが無い作品については無視する</span></span><br><span class="line">    <span class="keyword">if</span> (len(t) &gt; <span class="number">0</span>) :</span><br><span class="line">        productMatrix.append(t)</span><br><span class="line"></span><br><span class="line"><span class="comment"># タグリストを読み込む（以降これは変更されない）</span></span><br><span class="line">tags = []</span><br><span class="line">csv_file = open(DLTAGS_CSV_FILENAME, <span class="string">"r"</span>)</span><br><span class="line">f = csv.reader(csv_file, delimiter=<span class="string">","</span>, doublequote=<span class="literal">True</span>, lineterminator=<span class="string">"\r\n"</span>, quotechar=<span class="string">'"'</span>, skipinitialspace=<span class="literal">True</span>)</span><br><span class="line">header = next(f)</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> f:</span><br><span class="line">    tags.append(row[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># [tags][tags]の二次元辞書を生成する。</span></span><br><span class="line">tagMatrix = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> tags :</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> tags :</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (x <span class="keyword">in</span> tagMatrix):</span><br><span class="line">            tagMatrix[x] = &#123;&#125;</span><br><span class="line">        <span class="comment"># 初期値は0とする</span></span><br><span class="line">        tagMatrix[x][y] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># productMatrixの1rowが「1製品の持つタグ群」になる。</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> productMatrix :</span><br><span class="line">    <span class="comment"># 暫定処理。現状、タグの設定が["xxx", "yyy]だった場合はtagMatrix["xxx"]["yyy"]と["yyy"]["xxx"]の両方でカウントする。</span></span><br><span class="line">    <span class="comment"># 必要なのは「組み合わせの数」なのでどちらかだけでよい。（最終的には疎行列かつ三角行列になるはず）</span></span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> x :</span><br><span class="line">        <span class="keyword">for</span> z <span class="keyword">in</span> x :</span><br><span class="line">            tagMatrix[y][z] += <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> z <span class="keyword">in</span> x:</span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> x:</span><br><span class="line">            tagMatrix[y][z] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 頻出ランキング作成のためにサイズ5のキューを作成する。</span></span><br><span class="line">ranq = deque([], <span class="number">5</span>)</span><br><span class="line"><span class="comment"># Qへの初期値設定</span></span><br><span class="line">qInit = &#123;<span class="string">"val"</span>: <span class="number">-1</span>, <span class="string">"x"</span>: <span class="string">""</span>, <span class="string">"y"</span>: <span class="string">""</span>&#125;</span><br><span class="line">ranq.appendleft(qInit)</span><br><span class="line"></span><br><span class="line"><span class="comment"># tax*tagでマトリクスの全要素へアクセス可能。</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> tags :</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> tags :</span><br><span class="line"></span><br><span class="line">        is_continue = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 対角要素は意味がないのですべて-1とする。</span></span><br><span class="line">        <span class="keyword">if</span> (x == y) :</span><br><span class="line">            tagMatrix[x][y] = <span class="number">-1</span></span><br><span class="line">        <span class="comment"># Qの左端要素の「出現回数」を超過するものがあった場合、当該要素をQの左側から入れる。</span></span><br><span class="line">        <span class="keyword">if</span> (tagMatrix[x][y] &gt; ranq[<span class="number">0</span>][<span class="string">"val"</span>]) :</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> ignore <span class="keyword">in</span> IGNORE_TAGS :</span><br><span class="line">                <span class="keyword">if</span>(x == ignore <span class="keyword">or</span> y == ignore) :</span><br><span class="line">                    is_continue = <span class="literal">True</span></span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(is_continue) :</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            max = &#123;<span class="string">"val"</span>:tagMatrix[x][y], <span class="string">"x"</span>:x, <span class="string">"y"</span>:y&#125;</span><br><span class="line">            ranq.appendleft(max)</span><br><span class="line"></span><br><span class="line"><span class="comment"># CSVのヘッダ行生成。左端に"-"を入れる。</span></span><br><span class="line">h = copy.deepcopy(tags) <span class="comment"># 強いコピー</span></span><br><span class="line">h.insert(<span class="number">0</span>, <span class="string">"-"</span>)</span><br><span class="line">csvHeader = <span class="string">","</span>.join(h)</span><br><span class="line"></span><br><span class="line"><span class="comment"># タグの出現数をまとめた二次元配列出力</span></span><br><span class="line">f = open(<span class="string">"TagMatrix.csv"</span>, <span class="string">"w"</span>)</span><br><span class="line">writer = csv.writer(f, lineterminator=<span class="string">"\n"</span>)</span><br><span class="line">writer.writerow(h)</span><br><span class="line"></span><br><span class="line">csvLine = []</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> tags :</span><br><span class="line">    <span class="comment"># csvLine = [tag名, tag1との組み合わせ数, tag2との組み合わせ数, tag3との組み合わせの数…]という構成になる。</span></span><br><span class="line">    csvLine.append(x)</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> tags :</span><br><span class="line">        csvLine.append(tagMatrix[x][y])</span><br><span class="line">    writer.writerow(csvLine)</span><br><span class="line">    csvLine.clear()</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 頻出の組み合わせを出力</span></span><br><span class="line"><span class="keyword">for</span> rq <span class="keyword">in</span> ranq :</span><br><span class="line">    print(rq[<span class="string">"val"</span>], rq[<span class="string">"x"</span>], rq[<span class="string">"y"</span>])</span><br></pre></td></tr></table></figure>
+<ul>
+<li>This is all code. Sorry I’m not expert about Python, Maybe this is not clean code.</li>
+<li>Table on top of article export as CSV. (It easy to use for spreadsheet application)<ul>
+<li>Diagonal elements are unnecessary. Any value is ok, Just this time set as <code>-1</code>.</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/0b9b469c-9acf-a681-3341-5252dddd7223.png" alt="image"></p>
+<h4 id="View-result-data"><a href="#View-result-data" class="headerlink" title="View result data"></a>View result data</h4><ul>
+<li>Finally I got some data. Try to do something.</li>
+<li>Pickup some frequent tags.<ul>
+<li><code>巨乳/爆乳, 陵辱, ラブラブ/あまあま, 男性受け, 人外娘/モンスター娘</code> : <code>(Boobs, Insult, Lovelove/Sweet, Femdom, Monster-girl)</code></li>
+</ul>
+</li>
+<li>Put this tags as vertical. Let me check frequent tags…</li>
+</ul>
+<h5 id="Boobs"><a href="#Boobs" class="headerlink" title="Boobs"></a>Boobs</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/1b89c708-d094-3e0e-0498-c0d7c001257b.png" alt="image"></p>
+<p>わかりみ。</p>
+<h5 id="Insult"><a href="#Insult" class="headerlink" title="Insult"></a>Insult</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/520b8106-a30d-6f60-b049-e1446861fa2e.png" alt="image"></p>
+<p><strong>Syokusyu(Tentacles)</strong> is traditional Japanese culture since <a href="https://en.wikipedia.org/wiki/The_Dream_of_the_Fisherman%27s_Wife" target="_blank" rel="noopener">Katsushika Hokusai</a>… Maybe.</p>
+<h5 id="Lovelove-Sweet"><a href="#Lovelove-Sweet" class="headerlink" title="Lovelove-Sweet"></a>Lovelove-Sweet</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/6d2897db-b14c-e075-9145-4c8e539a7f5d.png" alt="image"></p>
+<p>On this case, a lot of positive image tags.</p>
+<h5 id="Femdom"><a href="#Femdom" class="headerlink" title="Femdom"></a>Femdom</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/1a1e4c9a-e1fc-4e14-bb51-6084bcb812bc.png" alt="image"></p>
+<p>Oh… yeah.</p>
+<h5 id="Monster-girl"><a href="#Monster-girl" class="headerlink" title="Monster-girl"></a>Monster-girl</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/0d9acec3-0e39-533e-c1a3-9f97f274622e.png" alt="image"></p>
+<p><img src="http://tn.smilevideo.jp/smile?i=21780747.L" alt="image"></p>
+<hr>
+<ul>
+<li>Next. Pickup more “Particular” tags. (Some gentlemen has strong feeling for this habits)</li>
+</ul>
+<h5 id="NTR"><a href="#NTR" class="headerlink" title="NTR"></a>NTR</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/9ad9b4f3-8005-c8b7-be98-b4d8f26c3de4.png" alt="image"></p>
+<p>NTR and Netorare, They are 2 sides of the same coin…</p>
+<h5 id="Futanari"><a href="#Futanari" class="headerlink" title="Futanari"></a>Futanari</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/6079a581-961b-2f69-6c22-79c27566eaa7.png" alt="image"></p>
+<p>Maybe enemy Mistress force to downfall(to darkside) for heroines.</p>
+<h5 id="Darkside"><a href="#Darkside" class="headerlink" title="Darkside"></a>Darkside</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/81248dff-c9f7-188c-373a-00c3134fb4c7.png" alt="image"></p>
+<p>From this side, Maybe Mahou-shoujo going to be brainwashed, That is always.</p>
+<h5 id="None-reversal"><a href="#None-reversal" class="headerlink" title="None-reversal"></a>None-reversal</h5><p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/d90cf96a-0f9c-c5a4-593c-b3d813c1caa9.png" alt="image"></p>
+<p>Strong combination of <strong>None-reversal, Femdom, Reversed rape</strong></p>
+<h4 id="Summarize"><a href="#Summarize" class="headerlink" title="Summarize"></a>Summarize</h4><ul>
+<li>Quite fan.</li>
+</ul>
+<h4 id="Loose-ends"><a href="#Loose-ends" class="headerlink" title="Loose ends"></a>Loose ends</h4><ul>
+<li>Now get frequent tags by deque. Maybe still remain some issues. Need to enhance.</li>
+<li>By Python, If use <strong>Data format</strong> we can make matrix more easy?</li>
+<li>We want to know only “Tags combination” For example, <code>tagMatrix[&quot;陵辱&quot;][&quot;ポニーテール&quot;]</code> and <code>tagMatrix[&quot;ポニーテール&quot;][&quot;陵辱&quot;]</code>, 1 side is enough.<ul>
+<li>Now this is Diagonal matrix. But finally Upper(Lower) triangular matrix is enough.</li>
+</ul>
+</li>
+<li>Maybe 6 tags are maximum of 1 product.<ul>
+<li>Search more products, Matrix getting huge. But almost elements are 0. This is Sparse matrix.</li>
+<li>I don’t think modern PC memory flood by 1000 or 2000 tags, But anyway we should use waist resources. I want to install sparse-matrix algorithm.</li>
+<li>As Y-Matrix my old work.</li>
+</ul>
+</li>
+<li>Can I add <strong>Weight</strong> for tags combination from Ranking-score and sells-score.</li>
+<li>It was good practice for Python. <strong>But I don’t have idea how to use it.</strong><ul>
+<li>If I make good learning, Can I do predict next coming popular genre…?</li>
+</ul>
+</li>
+<li>If you have some ideas, Please post <a href="https://qiita.com/we-yu/items/d98050e0de94914b15b7" target="_blank" rel="noopener">here</a><ul>
+<li>Or <a href="https://docs.google.com/spreadsheets/d/12zU3987Ehv8CT4zhfZ9JmVMUmMGDqUhYBnUZyNfavUM/edit?usp=sharing" target="_blank" rel="noopener">Above CSV is here.</a> You may use this for your ideas.</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/" data-id="cjtohfo6d000nxvi5kwvgsded" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Doujin-game/">Python Doujin-game</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          pythonによる紳士達の性癖分析：Webスクレイピング編
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/03/24/sympyによる導関数の算出・描画/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">sympyによる導関数の算出・描画</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/">Apple FGO 課金 ソシャゲ purchase Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Doujin-game/">Python Doujin-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Python2-7-Udemy/">Python Python2.7 Udemy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Web-scraping/">Python Web-scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-simpy-Python2-7/">Python simpy Python2.7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Udemy-Python-MachineLearning/">Udemy Python MachineLearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity-Udemy/">Unity Udemy</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/" style="font-size: 10px;">Apple FGO 課金 ソシャゲ purchase Game</a> <a href="/tags/Python-Doujin-game/" style="font-size: 10px;">Python Doujin-game</a> <a href="/tags/Python-Python2-7-Udemy/" style="font-size: 10px;">Python Python2.7 Udemy</a> <a href="/tags/Python-Web-scraping/" style="font-size: 10px;">Python Web-scraping</a> <a href="/tags/Python-simpy-Python2-7/" style="font-size: 10px;">Python simpy Python2.7</a> <a href="/tags/Udemy-Python-MachineLearning/" style="font-size: 20px;">Udemy Python MachineLearning</a> <a href="/tags/Unity-Udemy/" style="font-size: 20px;">Unity Udemy</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/">pythonによる紳士達の性癖分析：Webスクレイピング編</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/">pythonによる紳士達の性癖分析：データ分析編</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/sympyによる導関数の算出・描画/">sympyによる導関数の算出・描画</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-ニューラルネットワークまとめ/">Udemy - ゼロからPythonで学ぶ人工知能と機械学習 : ニューラルネットワークまとめ</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-数学系処理／ニューロン編/">Udemy - ゼロからPythonで学ぶ人工知能と機械学習 : 数学系処理／ニューロン編</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 yuji<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>pythonによる紳士達の性癖分析：Webスクレイピング編 | Kohaku-san Kawaii</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 1stGet data from Doujin-game download web-site. Analyze popular genre.Collect fetishism data by Web-scraping. To review currentl">
+<meta name="keywords" content="Python Web-scraping">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pythonによる紳士達の性癖分析：Webスクレイピング編">
+<meta property="og:url" content="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/index.html">
+<meta property="og:site_name" content="Kohaku-san Kawaii">
+<meta property="og:description" content="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 1stGet data from Doujin-game download web-site. Analyze popular genre.Collect fetishism data by Web-scraping. To review currentl">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/16015970-5f9f-0cf6-4a54-ae0eaecb1274.png">
+<meta property="og:updated_time" content="2019-03-25T14:56:20.900Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pythonによる紳士達の性癖分析：Webスクレイピング編">
+<meta name="twitter:description" content="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 1stGet data from Doujin-game download web-site. Analyze popular genre.Collect fetishism data by Web-scraping. To review currentl">
+<meta name="twitter:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/16015970-5f9f-0cf6-4a54-ae0eaecb1274.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Kohaku-san Kawaii" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Kohaku-san Kawaii</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">we-yu&#39;s note</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://we-yu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-pythonによる紳士達の性癖分析：Webスクレイピング編" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/" class="article-date">
+  <time datetime="2019-03-24T16:12:39.000Z" itemprop="datePublished">2019-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      pythonによる紳士達の性癖分析：Webスクレイピング編
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Analyzing-Gentlemen’s-fetishism-by-Web-scraping-from-Doujin-game-site-1st"><a href="#Analyzing-Gentlemen’s-fetishism-by-Web-scraping-from-Doujin-game-site-1st" class="headerlink" title="Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 1st"></a>Analyzing Gentlemen’s fetishism by Web-scraping from Doujin-game site : 1st</h2><h3 id="Get-data-from-Doujin-game-download-web-site-Analyze-popular-genre"><a href="#Get-data-from-Doujin-game-download-web-site-Analyze-popular-genre" class="headerlink" title="Get data from Doujin-game download web-site. Analyze popular genre."></a>Get data from Doujin-game download web-site. Analyze popular genre.</h3><h4 id="Collect-fetishism-data-by-Web-scraping"><a href="#Collect-fetishism-data-by-Web-scraping" class="headerlink" title="Collect fetishism data by Web-scraping."></a>Collect fetishism data by Web-scraping.</h4><ul>
+<li>To review currently Python learning, Do real web-scraping.</li>
+<li>Perhaps someday useful for MachineLearning… I will get ranking data from A Doujin-game website.</li>
+<li>Get data from high-ranking games, We <strong>may</strong> understand recently popular fetish genre by gentlemen.</li>
+<li>I have to show some <strong>Unclean keywords</strong>. Please forgive me, Or <u>you’d better leave from here.</u></li>
+</ul>
+<p><em>Ready?</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: UTF-8</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re <span class="comment"># 正規表現用</span></span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep      <span class="comment"># 待ち時間用</span></span><br><span class="line"><span class="keyword">from</span> pprint <span class="keyword">import</span> pprint  <span class="comment"># 改行付き配列出力</span></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">SCRAPING_INTERVAL_TIME = <span class="number">5.5</span></span><br><span class="line"></span><br><span class="line">ranking_category_total = (</span><br><span class="line">    <span class="string">"http://*"</span>,</span><br><span class="line">)</span><br><span class="line"><span class="comment"># https://www.dlsite.com/maniax/ranking</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ページネイションを含め、探査対象となるURL群を取得し配列に格納、返却する。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getSearchTargetURLs</span><span class="params">(baseURLs)</span> :</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> basePage <span class="keyword">in</span> baseURLs :</span><br><span class="line">        tgtpage = requests.get(basePage)</span><br><span class="line">        pageUrls = []</span><br><span class="line"></span><br><span class="line">        soup = BeautifulSoup(tgtpage.content, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># ページネイションURLを取得</span></span><br><span class="line">        pagenations = soup.select(<span class="string">"li.ranking_pagination_item"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># ページネイションが存在しない場合は単一ページだけなので入力URLのみリストに入れ続行</span></span><br><span class="line">        <span class="keyword">if</span> len(pagenations) == <span class="number">0</span> :</span><br><span class="line">            pageUrls.append(basePage)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> pagina <span class="keyword">in</span> pagenations :</span><br><span class="line">            nexturl = pagina.find(<span class="string">'a'</span>, href=<span class="literal">True</span>)</span><br><span class="line">            pageUrls.append(nexturl[<span class="string">'href'</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 重複要素を削除（順番を保持しない）</span></span><br><span class="line">        pageUrls = list(set(pageUrls))</span><br><span class="line"></span><br><span class="line">    pprint(pageUrls)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pageUrls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 対象のプロダクトページが持つタグをすべて取得。タイトルと合わせて返す。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getAttributeTags</span><span class="params">(tgturl)</span> :</span></span><br><span class="line">    tgtpage = requests.get(tgturl)</span><br><span class="line"></span><br><span class="line">    sp = BeautifulSoup(tgtpage.content, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#    pageTitle = sp("h1")</span></span><br><span class="line">    pageTitle = sp.select(<span class="string">"h1"</span>)[<span class="number">0</span>].text.strip()</span><br><span class="line"></span><br><span class="line">    elems = sp.find_all(href=re.compile(<span class="string">"work.genre"</span>))</span><br><span class="line"></span><br><span class="line">    tags = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> e <span class="keyword">in</span> elems:</span><br><span class="line">        tags.append(e.getText())</span><br><span class="line"></span><br><span class="line">    print(pageTitle, end=<span class="string">" "</span>)</span><br><span class="line">    print(tags)</span><br><span class="line">    <span class="keyword">return</span> pageTitle, tags</span><br><span class="line"></span><br><span class="line"><span class="comment"># メイン処理スタート</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file open</span></span><br><span class="line">f = open(<span class="string">"RankingList.csv"</span>, <span class="string">"w"</span>)</span><br><span class="line">writer = csv.writer(f, lineterminator=<span class="string">"\n"</span>)</span><br><span class="line">header = [<span class="string">"Title"</span>, <span class="string">"Tags"</span>]</span><br><span class="line">writer.writerow(header)</span><br><span class="line"></span><br><span class="line">att_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">targetURLs = getSearchTargetURLs(ranking_category_total)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> targetURLs:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 対象URL : DLサイトランキング</span></span><br><span class="line">    r = requests.get(url)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 第一引数＝解析対象　第二引数＝パーサー(何を元に解析するか：この場合はHTML)</span></span><br><span class="line">    soup = BeautifulSoup(r.content, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">    idx = <span class="number">0</span></span><br><span class="line">    <span class="comment"># ランキングの順に従ってプロダクト名を取得する</span></span><br><span class="line">    <span class="keyword">for</span> rank <span class="keyword">in</span> soup.select(<span class="string">"dt.work_name"</span>):</span><br><span class="line"></span><br><span class="line">        idx+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># タグ込文字列から個別ページへのURLを抽出（ひとつだけなのでfind_allでなくfind）</span></span><br><span class="line">        tgturl = rank.find(<span class="string">'a'</span>, href=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># rankにはタグ等の情報も含まれているため、タイトルだけ抽出する</span></span><br><span class="line">        <span class="comment"># product_title = rank.getText()</span></span><br><span class="line">        <span class="comment"># product_title = product_title.strip()</span></span><br><span class="line">        <span class="comment"># print(str(idx) + " " + product_title + " " + str(tgturl['href']))</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># タグ抽出用関数に個別ページのURLを渡し、タグ群を取得</span></span><br><span class="line">        title, tags = getAttributeTags(tgturl[<span class="string">'href'</span>])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># &#123;タグ, そのタグを発見した数&#125;の形式で連想配列に格納。</span></span><br><span class="line">        <span class="keyword">for</span> tag <span class="keyword">in</span> tags:</span><br><span class="line">            att_dict[tag] = (att_dict.get(tag) <span class="keyword">or</span> <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        tags.insert(<span class="number">0</span>, title)</span><br><span class="line">        writer.writerow(tags)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (idx == <span class="number">10</span>) :</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">        sleep(SCRAPING_INTERVAL_TIME)</span><br><span class="line"></span><br><span class="line">    sleep(<span class="number">61</span>)</span><br><span class="line"></span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 発見したタグとその数の一覧をCSV出力</span></span><br><span class="line">f = open(<span class="string">"TagList.csv"</span>, <span class="string">"w"</span>)</span><br><span class="line">writer = csv.writer(f, lineterminator=<span class="string">"\n"</span>)</span><br><span class="line">header = [<span class="string">"Tag"</span>, <span class="string">"Count"</span>]</span><br><span class="line">writer.writerow(header)</span><br><span class="line"></span><br><span class="line">csvline = []</span><br><span class="line"><span class="keyword">for</span> att <span class="keyword">in</span> att_dict :</span><br><span class="line">    csvline = [att, att_dict[att]]</span><br><span class="line">    writer.writerow(csvline)</span><br><span class="line"></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>What am I doing? This is simple.<ol>
+<li>Access to Ranking page.</li>
+<li>If there’s paging, Get all URLs.</li>
+<li>Move to each product page on Ranking. Get “Title” and “Tags”.</li>
+</ol>
+</li>
+<li>And also create CSV file of <code>Title, Tag1, Tag2, Tag3, ...</code> and <code>Tag, Count of this Tag</code>. It may use for analyze later…</li>
+<li>I think Title-text doesn’t have copyright. But just in case, Title is</li>
+</ul>
+<p><strong>I don’t recommend try to translate this texts.</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Title,Tags</span><br><span class="line">堕落***,女王様/お姫様,ラブラブ/あまあま,退廃/背徳/インモラル,中出し,処女</span><br><span class="line">制服***,癒し,バイノーラル,少女,耳かき,ラブラブ/あまあま,ほのぼの</span><br><span class="line">無口***,少女,セーラー服,電車,無理矢理,中出し,調教</span><br><span class="line">【バ***,癒し,お姉さん,着物/和服,耳かき,中出し,フェラチオ</span><br><span class="line">おい***,逆転無し,人外娘/モンスター娘,ファンタジー,丸呑み,逆レイプ,男性受け</span><br><span class="line">(F***,バイノーラル,足コキ,パイズリ,言葉責め,焦らし,男性受け</span><br><span class="line">ウラ***,ポリゴン,首輪/鎖/拘束具,ムチ/縄/蝋燭,売春/援交,調教,監禁</span><br><span class="line">ニプ***,連続絶頂,戦士,バニーガール,アヘ顔,ツインテール,巨乳/爆乳</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Tag,Count</span><br><span class="line">ポニーテール,6</span><br><span class="line">輪姦,23</span><br><span class="line">スーツ,1</span><br><span class="line">メガネ,2</span><br><span class="line">盗撮,1</span><br><span class="line">陵辱,58</span><br><span class="line">ヤクザ/裏社会,1</span><br><span class="line">女王様/お姫様,9</span><br><span class="line">口内射精,2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Frequency tags as this. Everyone likes おっぱい…</li>
+</ul>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/16015970-5f9f-0cf6-4a54-ae0eaecb1274.png" alt="image"></p>
+<h4 id="What-use-for"><a href="#What-use-for" class="headerlink" title="What use for?"></a>What use for?</h4><ul>
+<li>Can I find correlations?</li>
+<li>For exsample… Maybe “ASMR, 耳かき” many times appear in same time. “逆レイプ, 言葉責め, 男性受け” also.<ul>
+<li>Conversely, “陵辱, ラブラブ/あまあま” doesn’t have any correlation. Maybe.</li>
+</ul>
+</li>
+<li>Might as well, I corrected this data. Use somehow by python and analyze.</li>
+<li>Result of frequent tags combination survey, Go to <a href="http:://www.google.com" target="_blank" rel="noopener">next part</a>.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://we-yu.github.io/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/" data-id="cjtohfo5w000bxvi572qi374a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Web-scraping/">Python Web-scraping</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">pythonによる紳士達の性癖分析：データ分析編</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/">Apple FGO 課金 ソシャゲ purchase Game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Doujin-game/">Python Doujin-game</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Python2-7-Udemy/">Python Python2.7 Udemy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Web-scraping/">Python Web-scraping</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-simpy-Python2-7/">Python simpy Python2.7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Udemy-Python-MachineLearning/">Udemy Python MachineLearning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Unity-Udemy/">Unity Udemy</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Apple-FGO-課金-ソシャゲ-purchase-Game/" style="font-size: 10px;">Apple FGO 課金 ソシャゲ purchase Game</a> <a href="/tags/Python-Doujin-game/" style="font-size: 10px;">Python Doujin-game</a> <a href="/tags/Python-Python2-7-Udemy/" style="font-size: 10px;">Python Python2.7 Udemy</a> <a href="/tags/Python-Web-scraping/" style="font-size: 10px;">Python Web-scraping</a> <a href="/tags/Python-simpy-Python2-7/" style="font-size: 10px;">Python simpy Python2.7</a> <a href="/tags/Udemy-Python-MachineLearning/" style="font-size: 20px;">Udemy Python MachineLearning</a> <a href="/tags/Unity-Udemy/" style="font-size: 20px;">Unity Udemy</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/24/pythonによる紳士達の性癖分析：Webスクレイピング編/">pythonによる紳士達の性癖分析：Webスクレイピング編</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/">pythonによる紳士達の性癖分析：データ分析編</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/24/sympyによる導関数の算出・描画/">sympyによる導関数の算出・描画</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-ニューラルネットワークまとめ/">Udemy - ゼロからPythonで学ぶ人工知能と機械学習 : ニューラルネットワークまとめ</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-数学系処理／ニューロン編/">Udemy - ゼロからPythonで学ぶ人工知能と機械学習 : 数学系処理／ニューロン編</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 yuji<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

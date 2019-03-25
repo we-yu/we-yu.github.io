@@ -5,19 +5,22 @@
   
 
   
-  <title>Post | Kohaku-san Kawaii</title>
+  <title>sympyによる導関数の算出・描画 | Kohaku-san Kawaii</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="This is my technical notes. And sometimes Diary.">
+  <meta name="description" content="Calculate &amp;amp; Draw Derived function by simpyUse simpy, Drawing Derived function graph.Calculate &amp;amp; Draw Derived function Detail setting should be investigate later. On First step, make it as most">
+<meta name="keywords" content="Python simpy Python2.7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Post">
-<meta property="og:url" content="https://we-yu.github.io/2019/03/19/Post/index.html">
+<meta property="og:title" content="sympyによる導関数の算出・描画">
+<meta property="og:url" content="https://we-yu.github.io/2019/03/24/sympyによる導関数の算出・描画/index.html">
 <meta property="og:site_name" content="Kohaku-san Kawaii">
-<meta property="og:description" content="This is my technical notes. And sometimes Diary.">
+<meta property="og:description" content="Calculate &amp;amp; Draw Derived function by simpyUse simpy, Drawing Derived function graph.Calculate &amp;amp; Draw Derived function Detail setting should be investigate later. On First step, make it as most">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-19T16:27:35.724Z">
+<meta property="og:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/345352d4-9070-df8d-ab83-fc5d2abacbbf.png">
+<meta property="og:updated_time" content="2019-03-25T14:52:21.136Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Post">
-<meta name="twitter:description" content="This is my technical notes. And sometimes Diary.">
+<meta name="twitter:title" content="sympyによる導関数の算出・描画">
+<meta name="twitter:description" content="Calculate &amp;amp; Draw Derived function by simpyUse simpy, Drawing Derived function graph.Calculate &amp;amp; Draw Derived function Detail setting should be investigate later. On First step, make it as most">
+<meta name="twitter:image" content="https://qiita-image-store.s3.amazonaws.com/0/135051/345352d4-9070-df8d-ab83-fc5d2abacbbf.png">
   
     <link rel="alternate" href="/atom.xml" title="Kohaku-san Kawaii" type="application/atom+xml">
   
@@ -68,10 +71,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Post" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-sympyによる導関数の算出・描画" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/03/19/Post/" class="article-date">
-  <time datetime="2019-03-19T16:27:35.000Z" itemprop="datePublished">2019-03-19</time>
+    <a href="/2019/03/24/sympyによる導関数の算出・描画/" class="article-date">
+  <time datetime="2019-03-24T15:38:35.000Z" itemprop="datePublished">2019-03-24</time>
 </a>
     
   </div>
@@ -82,7 +85,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Post
+      sympyによる導関数の算出・描画
     </h1>
   
 
@@ -90,32 +93,41 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Calculate-amp-Draw-Derived-function-by-simpy"><a href="#Calculate-amp-Draw-Derived-function-by-simpy" class="headerlink" title="Calculate &amp; Draw Derived function by simpy"></a>Calculate &amp; Draw Derived function by simpy</h2><h3 id="Use-simpy-Drawing-Derived-function-graph"><a href="#Use-simpy-Drawing-Derived-function-graph" class="headerlink" title="Use simpy, Drawing Derived function graph."></a>Use simpy, Drawing Derived function graph.</h3><h4 id="Calculate-amp-Draw-Derived-function"><a href="#Calculate-amp-Draw-Derived-function" class="headerlink" title="Calculate &amp; Draw Derived function"></a>Calculate &amp; Draw Derived function</h4><ul>
+<li>Detail setting should be investigate later.</li>
+<li>On First step, make it as most simple.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sympy <span class="keyword">as</span> sy</span><br><span class="line"></span><br><span class="line">x = sy.Symbol(<span class="string">'x'</span>)</span><br><span class="line"></span><br><span class="line">f = (<span class="number">1</span> * x**<span class="number">3</span>) + (<span class="number">0</span> * x**<span class="number">2</span>) + (<span class="number">-2</span> * x) + (<span class="number">0</span>)</span><br><span class="line"><span class="keyword">print</span> f</span><br><span class="line"></span><br><span class="line">g = f.diff()</span><br><span class="line"><span class="keyword">print</span> g</span><br><span class="line"></span><br><span class="line">sy.plot(f, g, (x, <span class="number">-2</span>, <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hogehoge$ python plot2.py</span><br><span class="line">x**3 - 2*x</span><br><span class="line">3*x**2 - 2</span><br></pre></td></tr></table></figure>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/135051/345352d4-9070-df8d-ab83-fc5d2abacbbf.png" alt="image.png"></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://we-yu.github.io/2019/03/19/Post/" data-id="cjtohfo5m0001xvi5bd6o2sc3" class="article-share-link">Share</a>
+      <a data-url="https://we-yu.github.io/2019/03/24/sympyによる導関数の算出・描画/" data-id="cjtohfo5u0009xvi5w4ymjz2a" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-simpy-Python2-7/">Python simpy Python2.7</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2019/03/20/Review4RecentlyUdemyClasses/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/03/24/pythonによる紳士達の性癖分析：データ分析編/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Review4RecentlyUdemyClasses
+          pythonによる紳士達の性癖分析：データ分析編
         
       </div>
     </a>
   
   
-    <a href="/2019/03/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/03/23/Udemy-ゼロからPythonで学ぶ人工知能と機械学習-ニューラルネットワークまとめ/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">Udemy - ゼロからPythonで学ぶ人工知能と機械学習 : ニューラルネットワークまとめ</div>
     </a>
   
 </nav>
