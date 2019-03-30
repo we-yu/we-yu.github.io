@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://we-yu.github.io/"/>
-  <updated>2019-03-30T14:17:20.700Z</updated>
+  <updated>2019-03-30T14:17:48.858Z</updated>
   <id>https://we-yu.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://we-yu.github.io/2019/03/30/My-Amber-and-Silver/"/>
     <id>https://we-yu.github.io/2019/03/30/My-Amber-and-Silver/</id>
     <published>2019-03-30T14:10:25.000Z</published>
-    <updated>2019-03-30T14:17:20.700Z</updated>
+    <updated>2019-03-30T14:17:48.858Z</updated>
     
     <content type="html"><![CDATA[<h4 id="This-is-my-silver-Name-is-Gin"><a href="#This-is-my-silver-Name-is-Gin" class="headerlink" title="This is my silver, Name is Gin."></a>This is my silver, Name is Gin.</h4><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/30/My-Amber-and-Silver/190330_Gin.jpg" alt="image"></p><ul><li>It seems now he likes on refrigerator.</li></ul>]]></content>
     
@@ -35,7 +35,9 @@
     </summary>
     
     
-      <category term="Cat Diary" scheme="https://we-yu.github.io/tags/Cat-Diary/"/>
+      <category term="Cat" scheme="https://we-yu.github.io/tags/Cat/"/>
+    
+      <category term="Diary" scheme="https://we-yu.github.io/tags/Diary/"/>
     
   </entry>
   
