@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://we-yu.github.io/"/>
-  <updated>2019-03-28T17:35:08.536Z</updated>
+  <updated>2019-03-30T14:14:15.379Z</updated>
   <id>https://we-yu.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My Amber and Silver</title>
+    <link href="https://we-yu.github.io/2019/03/30/My-Amber-and-Silver/"/>
+    <id>https://we-yu.github.io/2019/03/30/My-Amber-and-Silver/</id>
+    <published>2019-03-30T14:10:25.000Z</published>
+    <updated>2019-03-30T14:14:15.379Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="This-is-my-silver-Name-is-Gin"><a href="#This-is-my-silver-Name-is-Gin" class="headerlink" title="This is my silver, Name is Gin."></a>This is my silver, Name is Gin.</h4><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/sampleSlack.png" alt="image"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;This-is-my-silver-Name-is-Gin&quot;&gt;&lt;a href=&quot;#This-is-my-silver-Name-is-Gin&quot; class=&quot;headerlink&quot; title=&quot;This is my silver, Name is Gin.&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Cat Diary" scheme="https://we-yu.github.io/tags/Cat-Diary/"/>
+    
+  </entry>
   
   <entry>
     <title>Line-Sticker-Lider (cooperate with Slack)</title>
@@ -66,13 +89,13 @@
     </summary>
     
     
+      <category term="Python" scheme="https://we-yu.github.io/tags/Python/"/>
+    
       <category term="Bash" scheme="https://we-yu.github.io/tags/Bash/"/>
     
       <category term="Python3" scheme="https://we-yu.github.io/tags/Python3/"/>
     
       <category term="Niconico" scheme="https://we-yu.github.io/tags/Niconico/"/>
-    
-      <category term="Python" scheme="https://we-yu.github.io/tags/Python/"/>
     
   </entry>
   
@@ -201,9 +224,9 @@
     
       <category term="Python" scheme="https://we-yu.github.io/tags/Python/"/>
     
-      <category term="Python2.7" scheme="https://we-yu.github.io/tags/Python2-7/"/>
-    
       <category term="simpy" scheme="https://we-yu.github.io/tags/simpy/"/>
+    
+      <category term="Python2.7" scheme="https://we-yu.github.io/tags/Python2-7/"/>
     
   </entry>
   
