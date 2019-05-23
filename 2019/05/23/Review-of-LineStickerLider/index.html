@@ -9,19 +9,19 @@
   <meta name="theme-color" content="#3F51B5">
   
   
-  <meta name="keywords" content="Python,Web-Scraping,tkinter,Slack">
-  <meta name="description" content="This is my technical notes. And sometimes Diary.">
-<meta name="keywords" content="Python,Web-Scraping,tkinter,Slack">
+  <meta name="keywords" content="Python,Web-Scraping,tkinter,Slack,WIP">
+  <meta name="description" content="Reminders from LineStickerLiderAdd scrollbar by tkinter To use scrollbar by tkinter GUI. Scrollbar only attachable for Canvas. So, If needs put graphic canvases on frame, Should be make as this.  1234">
+<meta name="keywords" content="Python,Web-Scraping,tkinter,Slack,WIP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Review of LineStickerLider">
 <meta property="og:url" content="https://we-yu.github.io/2019/05/23/Review-of-LineStickerLider/index.html">
 <meta property="og:site_name" content="Kohaku-san Kawaii">
-<meta property="og:description" content="This is my technical notes. And sometimes Diary.">
+<meta property="og:description" content="Reminders from LineStickerLiderAdd scrollbar by tkinter To use scrollbar by tkinter GUI. Scrollbar only attachable for Canvas. So, If needs put graphic canvases on frame, Should be make as this.  1234">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-23T16:12:32.663Z">
+<meta property="og:updated_time" content="2019-05-23T17:32:05.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Review of LineStickerLider">
-<meta name="twitter:description" content="This is my technical notes. And sometimes Diary.">
+<meta name="twitter:description" content="Reminders from LineStickerLiderAdd scrollbar by tkinter To use scrollbar by tkinter GUI. Scrollbar only attachable for Canvas. So, If needs put graphic canvases on frame, Should be make as this.  1234">
   
     <link rel="alternative" href="/atom.xml" title="Kohaku-san Kawaii" type="application/atom+xml">
   
@@ -136,7 +136,7 @@
       <article id="post-Review-of-LineStickerLider" class="article article-type-post" itemprop="blogPost">
     <div class="post-meta flex-row">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Slack/">Slack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-Scraping/">Web-Scraping</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tkinter/">tkinter</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Slack/">Slack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WIP/">WIP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web-Scraping/">Web-Scraping</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tkinter/">tkinter</a></li></ul>
 
     </div>
     <div class="post-body">
@@ -183,7 +183,7 @@
 
             
             <nav class="post-toc-wrap" id="post-toc">
-            
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Reminders-from-LineStickerLider"><span class="post-toc-number">1.</span> <span class="post-toc-text">Reminders from LineStickerLider</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Add-scrollbar-by-tkinter"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Add scrollbar by tkinter</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Sample-Code"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Sample Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Radio-button-grouping"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Radio button grouping</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#To-delete-Canvas-amp-Frame"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">To delete Canvas &amp; Frame</span></a></li></ol></li></ol>
             </nav>
             
         </aside>
@@ -191,7 +191,22 @@
         <div class="post-main">
 
             <div class="post-content" id="post-content" itemprop="postContent">
-            
+            <h2 id="Reminders-from-LineStickerLider"><a href="#Reminders-from-LineStickerLider" class="headerlink" title="Reminders from LineStickerLider"></a>Reminders from LineStickerLider</h2><h3 id="Add-scrollbar-by-tkinter"><a href="#Add-scrollbar-by-tkinter" class="headerlink" title="Add scrollbar by tkinter"></a>Add scrollbar by tkinter</h3><ul>
+<li>To use scrollbar by tkinter GUI. Scrollbar only attachable for Canvas.</li>
+<li>So, If needs put graphic canvases on frame, Should be make as this.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Top of interface</span><br><span class="line">[Icon Canvas-1][Icon Canvas-2][Icon Canvas-3][...]</span><br><span class="line">[Graphical frame]</span><br><span class="line">[Scrollbar Canvas]</span><br><span class="line">[Basement Frame]</span><br><span class="line">Bottom of interface</span><br></pre></td></tr></table></figure>
+<h4 id="Sample-Code"><a href="#Sample-Code" class="headerlink" title="Sample Code"></a>Sample Code</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def SetGallaryFrame(self):</span><br><span class="line">    # Make vertical scrollbar to see all stickers -----------------------</span><br><span class="line">    self.outerCV = tk.Canvas(self.iconsFrame, width=GUIController.__windowWidth, height=GUIController.__windowHeight)</span><br><span class="line"></span><br><span class="line">    scrollbar = tk.Scrollbar(self.iconsFrame, orient=tk.VERTICAL)</span><br><span class="line">    scrollbar.pack(side=tk.RIGHT, fill=tk.Y)</span><br><span class="line">    scrollbar.config(command=self.outerCV.yview)</span><br><span class="line">    self.outerCV.config(scrollregion=(0, 0, 2000, 2000), yscrollcommand=scrollbar.set)</span><br><span class="line">    self.outerCV.pack(fill=tk.BOTH)</span><br><span class="line"></span><br><span class="line">    galleryFrame = tk.Frame(self.outerCV)</span><br><span class="line">    self.galleryTag = self.outerCV.create_window((0, 0), window=galleryFrame, anchor=tk.NW, width=self.outerCV.cget(&apos;width&apos;))</span><br><span class="line">    # --------------------------------------------------------------------</span><br><span class="line">    return galleryFrame</span><br></pre></td></tr></table></figure>
+<h3 id="Radio-button-grouping"><a href="#Radio-button-grouping" class="headerlink" title="Radio button grouping"></a>Radio button grouping</h3><ul>
+<li>Connected by <code>StringVar()</code> or <code>IntVar()</code></li>
+<li>Set that variable to <code>Radiobutton</code>.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Radio button group control</span><br><span class="line"># Radio group value should be class value.</span><br><span class="line"># self.groupVar = tk.IntVar()</span><br><span class="line"># self.groupVar.set(2)</span><br><span class="line">self.groupVar = tk.StringVar()</span><br><span class="line">self.groupVar.set(&apos;S&apos;)</span><br><span class="line"># groupVar = tk.StringVar(value=&apos;sizeL&apos;)</span><br><span class="line"></span><br><span class="line">radioTexts = [&apos;L&apos;, &apos;M&apos;, &apos;S&apos;]</span><br><span class="line">radioButtons = []</span><br><span class="line"></span><br><span class="line"># self.groupVarを軸としてL/M/Sのラジオボタンを設定。初期値はSを指定。</span><br><span class="line">for i ,rText in enumerate(radioTexts) :</span><br><span class="line">    radioButtons.append(tk.Radiobutton(inputFrame, text=rText, value=rText, variable=self.groupVar))</span><br></pre></td></tr></table></figure>
+<h3 id="To-delete-Canvas-amp-Frame"><a href="#To-delete-Canvas-amp-Frame" class="headerlink" title="To delete Canvas &amp; Frame"></a>To delete Canvas &amp; Frame</h3><ul>
+<li>To delete Frame, That is depend on how to layout. <code>pack()</code> -&gt; <code>pack_forget()</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">self.outerCV.delete(&apos;all&apos;)</span><br><span class="line"># ----</span><br><span class="line">self.iconsFrame.pack_forget()</span><br></pre></td></tr></table></figure>
+
 
             
             
