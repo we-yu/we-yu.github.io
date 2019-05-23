@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://we-yu.github.io/"/>
-  <updated>2019-03-30T14:17:48.858Z</updated>
+  <updated>2019-05-23T16:12:32.663Z</updated>
   <id>https://we-yu.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Review of LineStickerLider</title>
+    <link href="https://we-yu.github.io/2019/05/23/Review-of-LineStickerLider/"/>
+    <id>https://we-yu.github.io/2019/05/23/Review-of-LineStickerLider/</id>
+    <published>2019-05-23T16:11:58.000Z</published>
+    <updated>2019-05-23T16:12:32.663Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://we-yu.github.io/tags/Python/"/>
+    
+      <category term="Web-Scraping" scheme="https://we-yu.github.io/tags/Web-Scraping/"/>
+    
+      <category term="tkinter" scheme="https://we-yu.github.io/tags/tkinter/"/>
+    
+      <category term="Slack" scheme="https://we-yu.github.io/tags/Slack/"/>
+    
+  </entry>
+  
+  <entry>
     <title>My Amber and Silver</title>
     <link href="https://we-yu.github.io/2019/03/30/My-Amber-and-Silver/"/>
     <id>https://we-yu.github.io/2019/03/30/My-Amber-and-Silver/</id>
     <published>2019-03-30T14:10:25.000Z</published>
-    <updated>2019-03-30T14:17:48.858Z</updated>
+    <updated>2019-03-30T14:27:01.648Z</updated>
     
     <content type="html"><![CDATA[<h4 id="This-is-my-silver-Name-is-Gin"><a href="#This-is-my-silver-Name-is-Gin" class="headerlink" title="This is my silver, Name is Gin."></a>This is my silver, Name is Gin.</h4><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/30/My-Amber-and-Silver/190330_Gin.jpg" alt="image"></p><ul><li>It seems now he likes on refrigerator.</li></ul>]]></content>
     
@@ -46,7 +68,7 @@
     <link href="https://we-yu.github.io/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/"/>
     <id>https://we-yu.github.io/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/</id>
     <published>2019-03-28T15:04:24.000Z</published>
-    <updated>2019-05-15T17:38:27.831Z</updated>
+    <updated>2019-05-23T16:12:27.519Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Line-Sticker-samples-use-in-Slack"><a href="#Line-Sticker-samples-use-in-Slack" class="headerlink" title="Line Sticker samples use in Slack"></a>Line Sticker samples use in Slack</h2><h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><ul><li>On Slack, If post “Picture’s URL”. Shows that picture directly in chat window. (Depend on setting)</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/sampleSlack.png" alt="image"></p><ul><li>All of Line stickers is published on <a href="https://store.line.me/" target="_blank" rel="noopener">Line Store</a> website.</li><li>But right click on sticker graphic, Can’t get URL. Might be restricted.</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/stroke.png" alt="image"></p><ul><li><strong>No worry, We have F12 on keyboard</strong></li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/popteamLineBlur.png" alt="image"></p><ul><li>Finally, Get target sticker’s URL from <code>Elements</code> window and post that on Slack. We can see desired one for your team.</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/onSlackBlur.png" alt="image"></p><h3 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h3><ul><li>We can get desired sticker sample picture by above process.</li><li>But if do it every time. It’s bother.</li><li>By the way, 3 great virtues of a programmer. <strong>Laziness, Impatience, Hubris</strong>.</li><li>It is time —– for simplification.</li></ul><h3 id="How-to-do"><a href="#How-to-do" class="headerlink" title="How to do"></a>How to do</h3><ul><li>Made by Primitive Python as possible.</li><li>Require components maybe <strong>GUI, Web-Scraper, DB</strong>.<ul><li>I think <strong>Recent, Favorite</strong> functions are useful.</li></ul></li><li>Web-Scraping I already learned, Maybe I can do.</li><li>Python most primitive GUI component is maybe <strong>tkinter</strong>? OK I will do.</li><li>This is just small &amp; local application. No need huge DB system. Can I use <strong>SQLite</strong>?</li></ul><h3 id="Currently-progress"><a href="#Currently-progress" class="headerlink" title="Currently progress"></a>Currently progress</h3><ul><li>I have confirmed that SQLite can be used in Python<ul><li>Now try to make sample <a href="https://github.com/we-yu/L_SL/blob/develop/guiPractice/src/SQLiTest.py" target="_blank" rel="noopener">script</a>.</li></ul></li><li>Considering draft design of GUI…</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/IMG_0670.JPG" alt="image"></p><p>-&gt; To design GUI, Now learning <a href="https://dotinstall.com/lessons/basic_sketch/42701" target="_blank" rel="noopener">sketch</a></p><ul><li>Now prepare modules of main and gui control. Finally I have to put pictures as tile in window.</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/progress01.png" alt="image"></p><ul><li>Already done “Put pictures as tile”. Next I have to create table…</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/pptpWindow4.png" alt="image"></p><h4 id="2019-04-17"><a href="#2019-04-17" class="headerlink" title="2019/04/17"></a>2019/04/17</h4><ul><li>Now succeeded to download Line sticker samples and puts as tile on Generated GUI window.</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/fateSample.png" alt="image"></p><h4 id="2019-04-22"><a href="#2019-04-22" class="headerlink" title="2019/04/22"></a>2019/04/22</h4><ul><li>Now put URL input text-area and get new icons from specified URL, Then reload Icons window.</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/LSLsample1.gif" alt="image"></p><h4 id="2019-05-02"><a href="#2019-05-02" class="headerlink" title="2019/05/02"></a>2019/05/02</h4><ul><li>Succeeded connect with DB (sqlite file). Now stored Large, Middle, Small size icons in table.</li><li>Next topic Canvas make as button, If kick canvas copy url on clipboard.</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/connect2db.png" alt="image"></p><h4 id="2019-05-05"><a href="#2019-05-05" class="headerlink" title="2019/05/05"></a>2019/05/05</h4><ul><li>Now mainpath working fine. Next add more optional functions.</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/LSLsample2.gif" alt="image"></p><h4 id="2019-05-14"><a href="#2019-05-14" class="headerlink" title="2019/05/14"></a>2019/05/14</h4><ul><li>Scrollbar is working… To work it, Need set Frame -&gt; Canvas -&gt; Frame -&gt; Canvases. That was trap.</li><li>Go ahead…</li></ul><p><img src="https://raw.githubusercontent.com/we-yu/we-yu.github.io/master/2019/03/28/Line-Sticker-Lider-cooperate-with-Slack/LSLsample3.gif" alt="image"></p><p>To be continued…</p>]]></content>
     
@@ -67,8 +89,6 @@
       <category term="tkinter" scheme="https://we-yu.github.io/tags/tkinter/"/>
     
       <category term="Slack" scheme="https://we-yu.github.io/tags/Slack/"/>
-    
-      <category term="WIP" scheme="https://we-yu.github.io/tags/WIP/"/>
     
   </entry>
   
@@ -226,9 +246,9 @@
     
       <category term="Python" scheme="https://we-yu.github.io/tags/Python/"/>
     
-      <category term="simpy" scheme="https://we-yu.github.io/tags/simpy/"/>
-    
       <category term="Python2.7" scheme="https://we-yu.github.io/tags/Python2-7/"/>
+    
+      <category term="simpy" scheme="https://we-yu.github.io/tags/simpy/"/>
     
   </entry>
   
