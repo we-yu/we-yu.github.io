@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://we-yu.github.io/"/>
-  <updated>2019-05-26T18:20:37.212Z</updated>
+  <updated>2019-05-26T18:23:50.018Z</updated>
   <id>https://we-yu.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://we-yu.github.io/2019/05/27/Preparation-for-next-office/"/>
     <id>https://we-yu.github.io/2019/05/27/Preparation-for-next-office/</id>
     <published>2019-05-26T18:12:18.000Z</published>
-    <updated>2019-05-26T18:20:37.212Z</updated>
+    <updated>2019-05-26T18:23:50.018Z</updated>
     
     <content type="html"><![CDATA[<h3 id="What-is-AWS-What-is-DigitalOcean"><a href="#What-is-AWS-What-is-DigitalOcean" class="headerlink" title="What is AWS, What is DigitalOcean."></a>What is AWS, What is DigitalOcean.</h3><h3 id="AWS-vs-Azure-What-is-different"><a href="#AWS-vs-Azure-What-is-different" class="headerlink" title="AWS vs Azure, What is different?"></a>AWS vs Azure, What is different?</h3><h3 id="Knowledge-of-AWS-EC2"><a href="#Knowledge-of-AWS-EC2" class="headerlink" title="Knowledge of AWS EC2"></a>Knowledge of AWS EC2</h3><h3 id="Compare-OpenStack-and-VMware"><a href="#Compare-OpenStack-and-VMware" class="headerlink" title="Compare OpenStack and VMware"></a>Compare OpenStack and VMware</h3><h3 id="Network-configuration-of-Infrastructure"><a href="#Network-configuration-of-Infrastructure" class="headerlink" title="Network configuration of Infrastructure"></a>Network configuration of Infrastructure</h3><h3 id="Basic-information-about-Online-marketing"><a href="#Basic-information-about-Online-marketing" class="headerlink" title="Basic information about Online-marketing"></a>Basic information about Online-marketing</h3>]]></content>
     
@@ -35,7 +35,17 @@
     </summary>
     
     
-      <category term="AWS, DigitalOcean, Azure, EC2, OpenStack, VMware" scheme="https://we-yu.github.io/tags/AWS-DigitalOcean-Azure-EC2-OpenStack-VMware/"/>
+      <category term="AWS" scheme="https://we-yu.github.io/tags/AWS/"/>
+    
+      <category term="DigitalOcean" scheme="https://we-yu.github.io/tags/DigitalOcean/"/>
+    
+      <category term="Azure" scheme="https://we-yu.github.io/tags/Azure/"/>
+    
+      <category term="EC2" scheme="https://we-yu.github.io/tags/EC2/"/>
+    
+      <category term="OpenStack" scheme="https://we-yu.github.io/tags/OpenStack/"/>
+    
+      <category term="VMware" scheme="https://we-yu.github.io/tags/VMware/"/>
     
   </entry>
   
