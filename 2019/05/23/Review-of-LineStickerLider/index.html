@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="Kohaku-san Kawaii">
 <meta property="og:description" content="Reminders from LineStickerLiderAdd scrollbar by tkinter To use scrollbar by tkinter GUI. Scrollbar only attachable for Canvas. So, If needs put graphic canvases on frame, Should be make as this.  1234">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-05-23T17:32:05.622Z">
+<meta property="og:updated_time" content="2019-05-26T17:51:18.674Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Review of LineStickerLider">
 <meta name="twitter:description" content="Reminders from LineStickerLiderAdd scrollbar by tkinter To use scrollbar by tkinter GUI. Scrollbar only attachable for Canvas. So, If needs put graphic canvases on frame, Should be make as this.  1234">
@@ -183,7 +183,7 @@
 
             
             <nav class="post-toc-wrap" id="post-toc">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Reminders-from-LineStickerLider"><span class="post-toc-number">1.</span> <span class="post-toc-text">Reminders from LineStickerLider</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Add-scrollbar-by-tkinter"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Add scrollbar by tkinter</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Sample-Code"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Sample Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Radio-button-grouping"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Radio button grouping</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#To-delete-Canvas-amp-Frame"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">To delete Canvas &amp; Frame</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Reminders-from-LineStickerLider"><span class="post-toc-number">1.</span> <span class="post-toc-text">Reminders from LineStickerLider</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Add-scrollbar-by-tkinter"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Add scrollbar by tkinter</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Sample-Code"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">Sample Code</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Radio-button-grouping"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Radio button grouping</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Gadget-placing-functions"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Gadget placing functions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Event-binding-for-Button-Call-function-by-button-kicking"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Event binding for Button. (Call function by button kicking)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#To-delete-Canvas-amp-Frame"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">To delete Canvas &amp; Frame</span></a></li></ol></li></ol>
             </nav>
             
         </aside>
@@ -202,6 +202,18 @@
 <li>Set that variable to <code>Radiobutton</code>.</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"># Radio button group control</span><br><span class="line"># Radio group value should be class value.</span><br><span class="line"># self.groupVar = tk.IntVar()</span><br><span class="line"># self.groupVar.set(2)</span><br><span class="line">self.groupVar = tk.StringVar()</span><br><span class="line">self.groupVar.set(&apos;S&apos;)</span><br><span class="line"># groupVar = tk.StringVar(value=&apos;sizeL&apos;)</span><br><span class="line"></span><br><span class="line">radioTexts = [&apos;L&apos;, &apos;M&apos;, &apos;S&apos;]</span><br><span class="line">radioButtons = []</span><br><span class="line"></span><br><span class="line"># self.groupVarを軸としてL/M/Sのラジオボタンを設定。初期値はSを指定。</span><br><span class="line">for i ,rText in enumerate(radioTexts) :</span><br><span class="line">    radioButtons.append(tk.Radiobutton(inputFrame, text=rText, value=rText, variable=self.groupVar))</span><br></pre></td></tr></table></figure>
+<h3 id="Gadget-placing-functions"><a href="#Gadget-placing-functions" class="headerlink" title="Gadget placing functions"></a>Gadget placing functions</h3><ul>
+<li>Mainly <code>pack</code> and <code>grid</code> we can placing gadgets.</li>
+<li><a href="https://pg-chain.com/python-pack-grid-place" target="_blank" rel="noopener">https://pg-chain.com/python-pack-grid-place</a></li>
+</ul>
+<h3 id="Event-binding-for-Button-Call-function-by-button-kicking"><a href="#Event-binding-for-Button-Call-function-by-button-kicking" class="headerlink" title="Event binding for Button. (Call function by button kicking)"></a>Event binding for Button. (Call function by button kicking)</h3><ul>
+<li><code>*.bind(&quot;&lt;Button-1&gt;&quot;, lambda event, a=urlBox:self.ReloadIconsFrame(a))</code><ul>
+<li>-&gt; Call <code>self.ReloadIconsFrame()</code> function with <code>urlBox</code> as argument.</li>
+<li><button-1> : Light click.</button-1></li>
+<li><buttonrelease-1> : Light Release.</buttonrelease-1></li>
+</ul>
+</li>
+</ul>
 <h3 id="To-delete-Canvas-amp-Frame"><a href="#To-delete-Canvas-amp-Frame" class="headerlink" title="To delete Canvas &amp; Frame"></a>To delete Canvas &amp; Frame</h3><ul>
 <li>To delete Frame, That is depend on how to layout. <code>pack()</code> -&gt; <code>pack_forget()</code></li>
 </ul>
@@ -220,6 +232,13 @@
             </div>
             
 <nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2019/05/27/Preparation-for-next-office/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Preparation for next office</h4>
+      </a>
+    </div>
   
 
   
