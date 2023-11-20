@@ -32,7 +32,6 @@ lib64/
 *~
 
 # Pelican に関する無視ファイル
-output/
 content.json
 *.pid
 *.retry
