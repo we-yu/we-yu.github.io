@@ -1,0 +1,42 @@
+# 一般的な無視ファイル
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+site/
+build/
+dist/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+*.egg-info/
+.cache/
+*.bak
+*.swp
+*.txt
+*~
+
+# Pelican に関する無視ファイル
+output/
+content.json
+*.pid
+*.retry
+
+# テーマやカスタムファイル
+themes/
+!themes/brownstone/
